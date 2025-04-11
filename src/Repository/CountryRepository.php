@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Cities;
+use App\Entity\Country;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Cities>
+ * @extends ServiceEntityRepository<Country>
  */
-class CitiesRepository extends ServiceEntityRepository
+class CountryRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Cities::class);
+        parent::__construct($registry, Country::class);
     }
 
     //    /**
-    //     * @return Cities[] Returns an array of Cities objects
+    //     * @return Country[] Returns an array of Country objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class CitiesRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Cities
+    //    public function findOneBySomeField($value): ?Country
     //    {
     //        return $this->createQueryBuilder('c')
     //            ->andWhere('c.exampleField = :val')

@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\CountriesRepository;
+use App\Repository\CountryRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CountriesRepository::class)]
-class Countries
+#[ORM\Entity(repositoryClass: CountryRepository::class)]
+class Country
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
