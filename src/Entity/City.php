@@ -16,11 +16,12 @@ class City
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $country = null;
-
     #[ORM\Column]
     private ?bool $isCapital = null;
+
+    #[ORM\ManyToOne(inversedBy: 'cities')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Country $country = null;
 
     public function getId(): ?int
     {
@@ -39,18 +40,6 @@ class City
         return $this;
     }
 
-    public function getCountry(): ?string
-    {
-        return $this->country;
-    }
-
-    public function setCountry(string $country): static
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
     public function isCapital(): ?bool
     {
         return $this->isCapital;
@@ -59,6 +48,18 @@ class City
     public function setIsCapital(bool $isCapital): static
     {
         $this->isCapital = $isCapital;
+
+        return $this;
+    }
+
+    public function getCountry(): ?Country
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?Country $country): static
+    {
+        $this->country = $country;
 
         return $this;
     }
